@@ -30,15 +30,14 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <unistd.h>
-#include "jbcm_pub.h"
 #include <sal/core/spl.h>
 #include <sal/appl/pci.h>
 #include <ibde.h>
-#include <infra/uio_user_common.h>
-#include "jbcm_uio.h"
+#include "common/uio_user_common.h"
+#include "usr_bcm_uio.h"
 
 uint32_t *
-jbcm_sw_baseaddr_get(pic_id_t pic_id)
+bcm_sw_baseaddr_get(pic_id_t pic_id)
 {
     int32_t fd;
     uint32_t * base_addr;
@@ -65,12 +64,11 @@ jbcm_sw_baseaddr_get(pic_id_t pic_id)
 static void
 isr_handlers(void)
 {
-    /*TODO check in the code with jbcm_bde.c*/
     return;
 }
 
 void
-jbcm_sw_irq_handler(void *data)
+bcm_sw_irq_handler(void *data)
 {
     int32_t fd;
     uint32_t   event_count;
@@ -112,7 +110,7 @@ jbcm_sw_irq_handler(void *data)
 }
 
 uint32_t *
-jbcm_dma_region_alloc(uint32_t size)
+bcm_dma_region_alloc(uint32_t size)
 {
     int32_t fd;
     uint32_t * dma_region_addr;

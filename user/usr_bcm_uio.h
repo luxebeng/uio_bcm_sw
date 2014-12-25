@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __JBCM_UIO_H_
-#define __JBCM_UIO_H_
+#ifndef __BCM_UIO_H_
+#define __BCM_UIO_H_
 
 #define DMA_MEM_ALLOCATE_MMAP_OFFSET 0xFFFFF000UL
 
@@ -32,7 +32,7 @@ const char *bcm_devm_name="bcm_sw";
  * @return
  *   - None
  */
-extern void  jbcm_sw_irq_handler(void *data);
+extern void  bcm_sw_irq_handler(void *data);
 /**
  * get base address for the BCM
  * @param pic_id
@@ -40,7 +40,7 @@ extern void  jbcm_sw_irq_handler(void *data);
  * @return
  *    the base address
  */
-extern uint32_t *jbcm_sw_baseaddr_get(pic_id_t pic_id);
+extern uint32_t *bcm_sw_baseaddr_get(pic_id_t pic_id);
 /**
  * get base address for DMA pool
  * @param size
@@ -48,6 +48,6 @@ extern uint32_t *jbcm_sw_baseaddr_get(pic_id_t pic_id);
  * @return
  *    the base address for the DMA pool.
  */
-extern uint32_t *jbcm_dma_region_alloc(u_int32_t size);
+extern uint32_t *bcm_dma_region_alloc(u_int32_t size);
 
 #endif
